@@ -12,8 +12,8 @@
 </head>
 <body>
     <h1>Welcome!</h1>
-    <p>$(person.email}</p>
-    <p>$(person.firstName}</p>
-    <p>$(person.lastName}</p>
+    <p>${person.email}</p>
+    <p>${person.firstName}</p>
+    <p>${person.lastName}</p>
 </body>
 </html>

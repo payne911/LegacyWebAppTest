@@ -23,13 +23,13 @@
 
     <label>
         First name:
-        <input type="text" name="email" required/>
+        <input type="text" name="firstName" required/>
     </label>
     <br/>
 
     <label>
         Last name:
-        <input type="text" name="email"/>
+        <input type="text" name="lastName"/>
     </label>
     <br/>
 

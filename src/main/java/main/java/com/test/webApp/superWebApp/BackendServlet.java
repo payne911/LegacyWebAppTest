@@ -32,7 +32,7 @@ public class BackendServlet extends HttpServlet {
         Map<String, String[]> reqParamMap = request.getParameterMap();
 
         String action = reqParamMap.get("action")[0];
-        if(!action.equals("backend")) // todo: how to log ?
+        if(!action.equals("add")) // todo: how to log ?
             throw new ServletException("The specified action doesn't exist");
 
         getServletContext()
@@ -45,20 +45,19 @@ public class BackendServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String redirectedUrl = "/index.jsp"; // default
-        Map<String, String[]> reqParamMap = request.getParameterMap();
 
-        String action = reqParamMap.get("action")[0];
-        if(!action.equals("backend")) { // todo: how to log ?
+        String action = getParam(request, "action");
+        if(!action.equals("add")) { // todo: how to log ?
             getServletContext()
                     .getRequestDispatcher(redirectedUrl)
                     .forward(request, response);
             return; // abort
         }
 
-        // todo: find how to use ENUM to ensure the String is right everywhere! (index.html)
-        String email = reqParamMap.get("email")[0];
-        String fn    = reqParamMap.get("firstName")[0];
-        String ln    = reqParamMap.get("lastName")[0];
+        // todo: find how to use ENUM to ensure the String is right everywhere! (index.jsp)
+        String email = getParam(request, "email");
+        String fn    = getParam(request, "firstName");
+        String ln    = getParam(request, "lastName");
         Person newP  = new Person(email, fn, ln);
 
         boolean alreadyExists = fakeDatabase.stream().anyMatch(p -> p.equals(newP));
@@ -73,5 +72,9 @@ public class BackendServlet extends HttpServlet {
         getServletContext()
                 .getRequestDispatcher(redirectedUrl)
                 .forward(request, response);
+    }
+
+    private String getParam(HttpServletRequest req, String s) {
+        return req.getParameter(s);
     }
 }
