@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>backendServlet</servlet-name>
-        <servlet-class>main.java.com.test.webApp.superWebApp.BackendServlet</servlet-class>
+        <servlet-class>com.test.webApp.superWebApp.servlet.BackendServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>backendServlet</servlet-name>

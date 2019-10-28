@@ -13,7 +13,7 @@
 <body>
 <p>Wonderful!</p>
 <form action="backend" method="get">
-    <input type="hidden" name="action" value="add"/>
+    <input type="hidden" name="form_action" value="add"/>
 
     <label>
         Email:
