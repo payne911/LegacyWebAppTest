@@ -29,7 +29,7 @@
 
     <label>
         Last name:
-        <input type="text" name="lastName"/>
+        <input type="text" name="lastName" required/>
     </label>
     <br/>
 
