@@ -1,5 +1,8 @@
 package com.test.webApp.superWebApp.service;
 
-public interface MyService {
-    // todo
+import com.test.webApp.superWebApp.dao.MyDao;
+
+
+public interface MyService<T> {
+    MyDao<T> getMainDao();
 }
