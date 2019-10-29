@@ -8,6 +8,7 @@
     <servlet>
         <servlet-name>backendServlet</servlet-name>
         <servlet-class>com.test.webApp.superWebApp.servlet.BackendServlet</servlet-class>
+        <load-on-startup>1</load-on-startup> <!-- To instantiate eagerly the servlet -->
     </servlet>
     <servlet-mapping>
         <servlet-name>backendServlet</servlet-name>
