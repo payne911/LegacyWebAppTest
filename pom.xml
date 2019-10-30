@@ -19,8 +19,8 @@
 
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-            <version>3.5.6-Final</version>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.8.Final</version>
         </dependency>
 
         <dependency>
@@ -38,12 +38,13 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- OJDBC for connection Driver. Ended up having to : https://stackoverflow.com/a/44539017/9768291 -->
-<!--        <dependency>-->
-<!--            <groupId>com.oracle.ojdbc</groupId>-->
-<!--            <artifactId>ojdbc10</artifactId>-->
-<!--            <version>19.3.0.0</version>-->
-<!--        </dependency>-->
+        <!-- ORACLE JDBC driver, need install yourself -->
+        <!-- mvn install:install-file -Dfile=C:\AmirouData\ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.4 -Dpackaging=jar -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+        </dependency>
 
         <!-- log4j2 -->
         <dependency>
